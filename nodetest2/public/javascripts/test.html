@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+	<script type="text/javascript"
+  		src="https://maps.googleapis.com/maps/api/js?libraries=visualization&sensor=true_or_false">
+	</script>
+	<script type="text/javascript" src="twitterStream.js"></script>
+	<script>
+		$(document).ready(function () {
+			$("button").click(function () {
+				$("p").hide();
+				var url = $(location).attr('href');
+				$('#spn_url').html('<strong>' + url + '</strong>');
+				$.get( "http://localhost:3000/Tweets", function( data ) {
+					alert(data[0].TweetText);
+					
+				});
+
+			});
+		});
+	</script>
+</head>
+<body>
+
+	<h2>This is a heading</h2>
+
+	<p>This is a paragraph.</p>
+	<p>This is another paragraph.</p>
+
+	<button>click me </button>
+
+	
+</body>
+</html>
+
